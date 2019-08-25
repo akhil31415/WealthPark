@@ -1,24 +1,25 @@
 package com.employee.repo;
 
-import java.util.List;
-
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 
 import com.employee.domain.Employee;
 
-public interface EmployeeRepository extends CrudRepository<Employee, Long>{
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long>{
 	
-	List<Employee> findAll() throws DataAccessException; 
+	//List<Employee> findAll() throws DataAccessException; 
 
-	//Employee findById(long id)throws DataAccessException;
+	Employee findById(long id)throws DataAccessException;
 
-	Employee save(Employee employee) throws DataAccessException;
+	//Employee save(Employee employee) throws DataAccessException;
 	
 	//void delete(long id) throws DataAccessException;
 	
-	//Page<Employee> findAll(Pageable pageable) throws DataAccessException;
-
+	Page<Employee> findAll(Pageable pageable) throws DataAccessException;
+	
+	Page<Employee> findByFirstName(@Param("fname")String name, Pageable pageable) throws DataAccessException;
+ 
 }
