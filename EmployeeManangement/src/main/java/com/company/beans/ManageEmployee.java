@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManageEmployee {
-	
+
 	private List<Employee> empRecords;
 	private static ManageEmployee empReg = null;
 
-	private ManageEmployee(){
+	private ManageEmployee() {
 		empRecords = new ArrayList<Employee>();
-    }
+	}
 
 	public static ManageEmployee getInstance() {
 		if (empReg == null) {
@@ -26,23 +26,38 @@ public class ManageEmployee {
 		return "Employee Added";
 	}
 
-	public String upDateStudent(Employee std) {
-		for (int i = 0; i < empRecords.size(); i++) {
+	public String upDateEmployee(Employee employee) {
+		boolean flag = false;
+		int i;
+		for (i = 0; i < empRecords.size(); i++) {
 			Employee emp = empRecords.get(i);
-			if (emp.getEmpid()==std.getEmpid()) {
-				empRecords.set(i, std);// update the new record
+
+			if (employee.getLastname() != null && employee.getLastname() != null) {
+				if (employee.getLastname() == emp.getLastname() && employee.getLastname() == emp.getLastname()) {
+					flag = true;
+					break;
+				}
+			}
+
+			if (flag) {
+				empRecords.set(i, employee);
 				return "Update successful";
 			}
+			return "Update unsuccessful!";
 		}
-		return "Update unsuccessful!";
 	}
 
-	public String deleteStudent(int empId) {
-		for (int i = 0; i < empRecords.size(); i++) {
-			Employee stdn = empRecords.get(i);
-			if (stdn.getEmpid()==empId) {
-				empRecords.remove(i);// update the new record
-				return "Delete successful";
+	public String deleteEmployee(Employee employee) {
+		boolean flag = false;
+		int i;
+		for (i = 0; i < empRecords.size(); i++) {
+			Employee emp = empRecords.get(i);
+
+			if (employee.getLastname() != null && employee.getLastname() != null) {
+				if (employee.getLastname() == emp.getLastname() && employee.getLastname() == emp.getLastname()) {
+					flag = true;
+					break;
+				}
 			}
 		}
 		return "Delete un-successful";
@@ -51,11 +66,11 @@ public class ManageEmployee {
 	public List<Employee> getAllEmpRecords() {
 		return empRecords;
 	}
-	
-	public Employee getEmpRecordbyId(int empId) {
+
+	public Employee getTheEmployee(String empId) {
 		for (int i = 0; i < empRecords.size(); i++) {
 			Employee emp = empRecords.get(i);
-			if (emp.getEmpid()==empId) {				
+			if (emp.getEmpid() == empId) {
 				return emp;
 			}
 		}

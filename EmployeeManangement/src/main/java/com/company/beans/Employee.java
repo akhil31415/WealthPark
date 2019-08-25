@@ -1,28 +1,57 @@
 package com.company.beans;
 
+import java.util.Date;
+
 public class Employee {
 	
-	String name;
-	int empid;	
-	String Dept;
+	String fistname;
+	String lastname;
+	Date dob;
+	String address;	
+	String boss;
+	double Salary;
+	String status;
 	
-	public String getName() {
-		return name;
+	public String getFistname() {
+		return fistname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFistname(String fistname) {
+		this.fistname = fistname;
 	}
-	public int getEmpid() {
-		return empid;
+	public String getLastname() {
+		return lastname;
 	}
-	public void setEmpid(int empid) {
-		this.empid = empid;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
-	public String getDept() {
-		return Dept;
+	public Date getDob() {
+		return dob;
 	}
-	public void setDept(String dept) {
-		Dept = dept;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
-
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getBoss() {
+		return boss;
+	}
+	public void setBoss(String boss) {
+		this.boss = boss;
+	}
+	public double getSalary() {
+		return Salary;
+	}
+	public void setSalary(double salary) {
+		Salary = salary;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }
