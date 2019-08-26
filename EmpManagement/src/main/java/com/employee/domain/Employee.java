@@ -1,5 +1,6 @@
 package com.employee.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Employee {
+
 
 	@Id
 	@Column(name = "emp_id")
@@ -37,15 +39,14 @@ public class Employee {
 	@Column(name = "address")
 	@NotNull
 	private String address;
-	
+
 	@Column(name = "boss")
 	@NotNull
 	private String boss;
-	
+
 	@Column(name = "salary")
 	@NotNull
 	private double salary;
-	
 
 	public long getEmpId() {
 		return this.id;
@@ -105,8 +106,9 @@ public class Employee {
 
 	@Override
 	public String toString() {
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MMM-dd");
 		return "Employee No= " + id + ", First Name= " + firstName + ", Last Name= " + lastName + ", Birth Date= "
-				+ birthDate +", Address= "+address+", Boss= "+boss+", Salary= "+salary;
+				+ sdf.format(birthDate) +", Address= "+address+", Boss= "+boss+", Salary= "+salary;
 	}
 
 }
