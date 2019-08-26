@@ -1,6 +1,6 @@
 # WealthPark
-The Back-end test has been impletmented using Spring boot.
-As mentioned int the requirements it has a employee with fields:
+The Back-end test has been implemented using Spring boot.
+As mentioned in the requirements it has a employee with fields:
 * First name
 * Last name
 * Birthday date
